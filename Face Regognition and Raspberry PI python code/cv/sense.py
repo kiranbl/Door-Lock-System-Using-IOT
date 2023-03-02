@@ -1,7 +1,7 @@
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
-cred = credentials.Certificate('/home/pi/Desktop/Final/cv/iot-webapp-53fe3-8be12c3bc404.json')
+cred = credentials.Certificate('/home/pi/Desktop/Final/cv/')
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 import time
@@ -14,14 +14,7 @@ import threading
 import os
 def firebase(n):
     firebaseConfig = {
-        "apiKey": "AIzaSyA5lf3OzM2yC7PMzxp3yJqedOjfmUaotR4",
-        "authDomain": "iot-webapp-53fe3.firebaseapp.com",
-        "databaseURL": "https://iot-webapp-53fe3-default-rtdb.firebaseio.com",
-        "projectId": "iot-webapp-53fe3",
-        "storageBucket": "iot-webapp-53fe3.appspot.com",
-        "messagingSenderId": "1096874791295",
-        "appId": "1:1096874791295:web:94066cdfd67ef03daa0a4a",
-        "measurementId": "G-PPCJPELDPR"
+    
       };
 
     firebase = pyrebase.initialize_app(firebaseConfig)
