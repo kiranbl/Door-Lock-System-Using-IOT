@@ -7,14 +7,7 @@ import pyrebase
 import sense
 
 firebaseConfig = {
-    "apiKey": "AIzaSyA5lf3OzM2yC7PMzxp3yJqedOjfmUaotR4",
-    "authDomain": "iot-webapp-53fe3.firebaseapp.com",
-    "databaseURL": "https://iot-webapp-53fe3-default-rtdb.firebaseio.com",
-    "projectId": "iot-webapp-53fe3",
-    "storageBucket": "iot-webapp-53fe3.appspot.com",
-    "messagingSenderId": "1096874791295",
-    "appId": "1:1096874791295:web:94066cdfd67ef03daa0a4a",
-    "measurementId": "G-PPCJPELDPR"
+  
 };
 
 firebase =pyrebase.initialize_app(firebaseConfig)
