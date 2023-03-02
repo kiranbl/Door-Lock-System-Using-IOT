@@ -1,0 +1,46 @@
+<%- include("partials/header.ejs") -%>
+
+<h1 class="display-2 heading text-center">Sign In</h1>
+
+<section class="container-fluid">
+  <section class="row justify-content-center">
+    <section class="col-12 col-sm-6 col-md-3">
+      <form class="signinForm" action="/signin" method="post">
+        <div class="form-floating mb-.5">
+          <input
+            type="email"
+            class="form-control inputField"
+            name="email"
+            id="floatingEmail"
+            value=""
+            placeholder="email"
+          /><br />
+          <label for="floatingEmail">Email Address</label>
+        </div>
+        <div class="form-floating mb-.5">
+          <input
+            type="password"
+            name="password"
+            value=""
+            id="floatingPassword"
+            class="form-control inputField"
+            placeholder="password"
+            required
+          /><br />
+          <label for="floatingPassword">Password</label>
+        </div>
+        <div class="text-center">
+          <input type="submit" class="btn subbutton" /><br />
+        </div>
+      </form>
+
+      <p class="linksection text-center">
+        <a class="linksection" href="/signup"
+          >Not Registered Yet? Click Here To Sign Up</a
+        >
+      </p>
+    </section>
+  </section>
+</section>
+
+<%- include("partials/footer.ejs") -%>

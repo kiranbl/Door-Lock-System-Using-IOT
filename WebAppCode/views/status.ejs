@@ -1,0 +1,37 @@
+<%- include("partials/header.ejs") -%>
+
+<section class="container-fluid">
+  <section class="row justify-content-center">
+    <section class="col-12 col-sm-6 col-md-3">
+      <% switch(errors.color) { case "green": %>
+      <div class="card border-success mb-3 status">
+        <div class="card-body text-success">
+          <h5 class="card-title"><%= errors.msg %> <%= errors.name %> !!!</h5>
+        </div>
+        <a href="/signin" class="btn btn-dark">Log Out</a>
+      </div>
+      <% break; case "red": %>
+      <div class="card border-danger mb-3 status">
+        <div class="card-body text-danger">
+          <h2 class="card-title"><%= errors.msg %></h2>
+        </div>
+        <div class="text-center">
+          <a href="/signin" class="btn btn-danger">Sign In</a>
+          <a href="/signup" class="btn btn-danger">Sign Up</a>
+        </div>
+      </div>
+      <% break; case "blue": %>
+      <div class="card border-primary mb-3 status">
+        <div class="card-body text-primary">
+          <h5 class="card-title"><%= errors.msg %></h5>
+        </div>
+        <div class="text-center">
+          <a href="/signin" class="btn btn-primary">Sign In</a>
+        </div>
+      </div>
+      <% break; default: break; } %>
+    </section>
+  </section>
+</section>
+
+<%- include("partials/footer.ejs") -%>

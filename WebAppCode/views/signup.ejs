@@ -1,0 +1,75 @@
+<%- include("partials/header.ejs") -%>
+
+<h1 class="display-2 heading text-center">Sign Up</h1>
+
+<section class="container-fluid">
+  <section class="row justify-content-center">
+    <section class="col-12 col-sm-6 col-md-3">
+      <form class="signinForm" action="/signup" method="post">
+        <div class="form-floating mb-.5">
+          <input
+            type="text"
+            class="form-control inputField"
+            name="username"
+            id="floatingInput"
+            value=""
+            placeholder="username"
+            required
+          /><br />
+          <label for="floatingInput">User Name</label>
+        </div>
+        <div class="form-floating mb-.5">
+          <input
+            type="email"
+            class="form-control inputField"
+            name="email"
+            id="floatingEmail"
+            value=""
+            placeholder="email"
+            required
+          /><br />
+          <label for="floatingEmail">Email Address</label>
+        </div>
+        <div class="form-floating mb-.5">
+          <input
+            type="password"
+            name="password"
+            value=""
+            id="floatingPassword"
+            class="form-control inputField"
+            placeholder="password"
+            required
+          /><br />
+          <label for="floatingPassword">Password</label>
+        </div>
+        <div class="form-floating mb-.5">
+          <input
+            type="password"
+            name="confirm_password"
+            value=""
+            id="floatingRPassword"
+            class="form-control inputField"
+            placeholder="password"
+            required
+          /><br />
+          <label for="floatingEPassword">Re-Enter The Password</label>
+        </div>
+        <div class="text-center">
+          <input type="submit" class="btn subbutton" /><br />
+        </div>
+      </form>
+
+      <p class="linksection text-center">
+        <a class="linksection" href="/signin"
+          >Already Have a Account ! Click Here To Sign In
+        </a>
+      </p>
+    </section>
+  </section>
+</section>
+
+
+<script>
+ 
+</script>
+<%- include("partials/footer.ejs") -%>

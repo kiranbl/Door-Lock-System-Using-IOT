@@ -1,0 +1,72 @@
+body{
+    background-color:#CDF0EA;
+ 
+}
+.heading{
+   margin-top: 3%;
+   margin-bottom: 2%
+   
+}
+
+.signinForm{
+padding: 20px;
+border-radius:5px;
+box-shadow: 0px 0px 10px 0px;
+align-items: center;
+}
+
+.inputField{
+    outline: none;
+}
+.form-control:focus {
+    border-color: #CDF0EA;
+    box-shadow: 0px 1px 1px #CDF0EA  ;
+}
+
+
+.subbutton
+{
+    width:70%;
+    color:#CDF0EA ;
+    background-color: #171717;
+    height: 50px;
+    outline: none;
+}
+.subbutton:hover{
+    color: #171717;
+    background-color: #CDF0EA ;
+    border-color: #CDF0EA;
+    box-shadow: 0px 1px 1px #CDF0EA  ;
+}
+
+.linksection
+{
+    margin-top: 10px;
+    text-decoration: none;
+    color:#171717;
+}
+.linksection:hover{
+    color: #39A6A3;
+}
+
+
+.status{
+    padding: 20px;
+    border-radius:10px;
+    align-items: center;
+    margin-top: 50%;
+}
+
+.box{
+    width:50%;
+    margin: auto;
+}
+
+#unkownimage{
+    width:100%;
+}
+
+#unknownbtn{
+margin: 5%;
+    width:auto;
+}

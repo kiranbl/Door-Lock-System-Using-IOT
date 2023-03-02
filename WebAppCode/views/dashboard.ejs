@@ -1,0 +1,128 @@
+<%- include("partials/header.ejs") -%>
+<%- include("partials/navbar.ejs") -%>
+
+
+       
+<h1  style="text-align: center; margin: 1rem;">Hello User</h1>
+
+
+
+
+  <div class="card text-center box" >
+    <img id="unkownimage"  class="card-img-top" alt="...">
+    <div  class="card-body">
+      <h5 id="timedate" class="card-title"></h5>
+      <p class="card-text"></p>
+      <a id="unknownbtn" href="#" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Open The Door</a>
+      <a  id="unknownbtn"href="#" class="btn btn-danger" data-bs-toggle="modal"  data-bs-target="#staticBackdrop1" data-target="#myModal">Deny Access With Message</a>
+    </div>
+  </div>
+
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Open The Door!!!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        <img id="unkownPersonAllowImg" class="card-img-top" alt="...">
+        <form action="/doorlock" method="post">
+
+        <label for="#opendoor">Send signal To Open The Door</label>
+        <input type="radio" name="opendoordata"  value='yes' id="opendoor" autocomplete="off">
+<br>
+   
+    <label for="#messageArea">Enter the message down here</label>
+            <br>
+            <input type="text" name="message" value='' id="messgaeArea" autocomplete="off">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <input type="submit" class="btn btn-primary"></button>
+        
+        </div>
+    </form>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade modal" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Deny Request And Send Message</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+         <form action="/sendMessage" method="post">
+            <label for="#messageArea">Enter the message down here</label>
+            <br>
+            <input type="text" name="message" value='' id="messgaeArea">
+  
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <input type="submit" class="btn btn-primary"></button>
+        </div>
+    </form>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-analytics.js"></script>
+
+ 
+
+<script type="text/javascript" >
+
+
+var firebaseConfig = {
+    apiKey: "AIzaSyA5lf3OzM2yC7PMzxp3yJqedOjfmUaotR4",
+    authDomain: "iot-webapp-53fe3.firebaseapp.com",
+    databaseURL: "https://iot-webapp-53fe3-default-rtdb.firebaseio.com",
+    projectId: "iot-webapp-53fe3",
+    storageBucket: "iot-webapp-53fe3.appspot.com",
+    messagingSenderId: "1096874791295",
+    appId: "1:1096874791295:web:94066cdfd67ef03daa0a4a",
+    measurementId: "G-PPCJPELDPR"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+
+  
+
+
+var db = firebase.firestore();
+
+// db.collection("AuthorisedUser").doc("wzrpRyRqmdYdBss624Gt5qL3c3F2").collection("users").get().then((querySnapshot) => {
+//   querySnapshot.forEach((doc) => {
+//       console.log(`${doc.id} => ${doc.data()}`);
+//   });
+// });
+
+
+db.collection("UserUnknownPhoto").doc("wzrpRyRqmdYdBss624Gt5qL3c3F2")
+    .onSnapshot((doc) => {
+        console.log("Current data: ", doc.data());
+
+        $("#unkownimage").attr({ "src": doc.data().url });
+        $("#timedate").text(doc.data().date.toDate())
+        $("#unkownPersonAllowImg").attr({ "src": doc.data().url });
+
+        
+    });
+
+
+</script>
+<%- include("partials/footer.ejs") -%>

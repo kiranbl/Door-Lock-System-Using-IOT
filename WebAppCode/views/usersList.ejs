@@ -1,0 +1,33 @@
+<%- include("partials/header.ejs") -%>
+<%- include("partials/navbar.ejs") -%>
+
+
+       
+<h1 style="text-align: center; margin: 1rem;">User List</h1>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+
+<% users.forEach((user) => {%>
+
+    <div class="col">
+      <div class="card" style="margin:1rem;">
+        <img src=<%= user.url %> class="card-img-top" alt="...">
+        <div class="card-body">
+          <h2 style="text-align: center;" class="card-title"><%= user.name %></h2>
+        </div>
+      </div>
+    </div>
+
+
+    <%}); %>
+  </div>
+
+
+
+
+
+
+
+
+  
+
+<%- include("partials/footer.ejs") -%>
