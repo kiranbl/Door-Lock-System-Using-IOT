@@ -1,0 +1,34 @@
+import socket
+from gtts import gTTS
+import os
+# take the server name and port name
+
+host = 'local host'
+port = 5000
+
+# create a socket at client side
+# using TCP / IP protocol
+s = socket.socket(socket.AF_INET,
+				socket.SOCK_STREAM)
+
+# connect it to server and port
+# number on local computer.
+s.connect(('127.0.0.1', port))
+
+# receive message string from
+# server, at a time 1024 B
+msg = s.recv(1024)
+
+# repeat as long as message
+# string are not empty
+while msg:
+    print('Recived:' + msg.decode())
+    command = 'espeak "'+msg.decode()+'"'
+#     gobj = gTTS(text=msg, lang="en",slow="false")
+#     gobj.save("message_temp.mp3")
+#     os.system("mpg321 message_temp.mp3")
+    os.system(command)
+    msg = s.recv(1024)
+# disconnect the client
+s.close()
+
